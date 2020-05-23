@@ -15,10 +15,8 @@ class Scraper
        hash[:profile_url] = var.first['href']
       # l = doc.css('.student-card a').map {|link| link['href']}[0]
       array << hash
-
     end
     array
-    binding.pry
   end
 
   def self.scrape_profile_page(profile_url) #is responsible for scraping an individual student's profile page to get further information about that student.
