@@ -3,7 +3,7 @@ require 'open-uri'
 require 'pry'
 
 class Scraper
-  #RETURN AN ARRAY OF HASHES 
+  #RETURN AN ARRAY OF HASHES
   def self.scrape_index_page(index_url) #is responsible for scraping the index page that lists all of the students
     doc = Nokogiri::HTML(open(index_url))
     array = []
@@ -12,12 +12,12 @@ class Scraper
       hash[:name] = e.css(".card-text-container .student-name").text.strip
       hash[:location] = e.css(".card-text-container .student-location").text.strip
       hash[:profile_url] = e.css(".student-card a")['href']
-      array << hash 
-    end 
-    array 
-  end 
+      array << hash
+    end
+    array
+  end
 
-  
+
 
 
 
