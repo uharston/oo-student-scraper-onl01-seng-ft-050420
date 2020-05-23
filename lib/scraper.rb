@@ -20,26 +20,24 @@ class Scraper
 
   def self.scrape_profile_page(profile_url) #is responsible for scraping an individual student's profile page to get further information about that student.
     doc = Nokogiri::HTML(open(profile_url))
-    array = []
-
-    social = doc.css(".main-wrapper.profile .vitals-container a")
-
-    social.each do |e|
-      hash = {}
-        binding.pry
-      if e.first['href'].include?('twitter')
-        hash[:twitter] = e.first['href']
-      elsif e.first['href'].include?('linkedin')
-        hash[:linkedin] = e.first['href']
-      elsif e.first['href'].include?('github')
-        hash[:github] = e.first['href']
+    social = doc.css(".main-wrapper.profile")
+    hash = {}
+    social.css(".vitals-container a").each do |e|
+  
+      if e.attributes['href'].value.include?('twitter')
+        hash[:twitter] = e.attributes['href'].value
+      elsif e.attributes['href'].value.include?('linkedin')
+        hash[:linkedin] = e.attributes['href'].value
+      elsif e.attributes['href'].value.include?('github')
+        hash[:github] = e.attributes['href'].value
       end
-      hash[:blog] =
-      hash[:profile_quote] = e.css(".profile-quote").text
-      hash[:bio] = e.css(".details-container .description-holder p").text
-      array << hash
-    end
-    array
+    end 
+      hash[:blog] = "empty"
+      hash[:profile_quote] = social.css(".profile-quote").text
+      hash[:bio] = social.css(".details-container .description-holder p").text
+
+      hash
+      binding.pry 
   end
 
 end
