@@ -10,6 +10,7 @@ class Scraper
     doc = Nokogiri::HTML(html)
     profiles = doc.css(".card-text-container").text.strip
     profiles.each {|p| puts p.text.strip}
+    binding.pry
   end
 
   # .roster-cards-container
