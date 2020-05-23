@@ -14,9 +14,9 @@ class Scraper
     location = doc.css(".card-text-container .student-location").text.strip
     profile_url = doc.css(".student-card a")['href']
           binding.pry
-    student.name = doc.css(".card-text-container .student-name").text.strip
-    student.location = doc.css(".card-text-container .student-location").text.strip
-    student.profile_url = doc.css(".student-card a")['href']
+    # student.name = doc.css(".card-text-container .student-name").text.strip
+    # student.location = doc.css(".card-text-container .student-location").text.strip
+    # student.profile_url = doc.css(".student-card a")['href']
 
 
 
