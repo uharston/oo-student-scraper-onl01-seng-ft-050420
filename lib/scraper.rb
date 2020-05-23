@@ -16,24 +16,24 @@ class Scraper
     end
     array
   end
-
-
-
-
-
-
-  # profiles = doc.css(".card-text-container .student-name").text.strip
-  #   binding.pry
-  # student = Student.new
-  # name = doc.css(".card-text-container .student-name").text.strip
-  # location = doc.css(".card-text-container .student-location") .text.strip
-  # profile_url = doc.css(".student-card a")['href']
-
-
-
-    profiles.each {|p| puts p.text.strip}
-
-  end
+  # 
+  # 
+  # 
+  # 
+  # 
+  # 
+  # # profiles = doc.css(".card-text-container .student-name").text.strip
+  # #   binding.pry
+  # # student = Student.new
+  # # name = doc.css(".card-text-container .student-name").text.strip
+  # # location = doc.css(".card-text-container .student-location") .text.strip
+  # # profile_url = doc.css(".student-card a")['href']
+  # 
+  # 
+  # 
+  #   profiles.each {|p| puts p.text.strip}
+  # 
+  # end
 
   # .roster-cards-container
   # .student-card
