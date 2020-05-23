@@ -23,13 +23,17 @@ class Scraper
     array = []
 
     social = doc.css(".main-wrapper.profile .vitals-container a")
-    binding.pry
+  
     social.each do |a|
       hash = {}
-
-      hash[:twitter] = e.css(".social-icon-container")
-      hash[:linkedin] = e.css(".social-icon-container")
-      hash[:github] = e.css(".social-icon-container")
+        binding.pry
+      if e.first['href'].include?('twitter')
+        hash[:twitter] = e.first['href']
+      elsif e.first['href'].include?('linkedin')
+        hash[:linkedin] = e.first['href']
+      elsif e.first['href'].include?('github')
+        hash[:github] = e.first['href']
+      end 
       hash[:blog] =
       hash[:profile_quote] = e.css(".profile-quote").text
       hash[:bio] = e.css(".details-container .description-holder p").text
