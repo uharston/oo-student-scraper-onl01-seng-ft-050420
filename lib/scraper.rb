@@ -37,7 +37,7 @@ class Scraper
       hash[:bio] = social.css(".details-container .description-holder p").text
 
       hash
-      binding.pry
+
   end
 
 end
