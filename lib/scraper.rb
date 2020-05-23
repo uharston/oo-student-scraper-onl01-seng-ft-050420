@@ -21,12 +21,12 @@ class Scraper
   def self.scrape_profile_page(profile_url) #is responsible for scraping an individual student's profile page to get further information about that student.
     doc = Nokogiri::HTML(open(profile_url))
     array = []
-  
+
     social = doc.css(".main-wrapper.profile .vitals-container a")
-    binding.pry 
+    binding.pry
     social.each do |a|
       hash = {}
-        
+
       hash[:twitter] = e.css(".social-icon-container")
       hash[:linkedin] = e.css(".social-icon-container")
       hash[:github] = e.css(".social-icon-container")
