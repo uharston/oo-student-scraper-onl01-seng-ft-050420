@@ -32,7 +32,7 @@ class Scraper
         hash[:github] = e.attributes['href'].value
       end
     end
-      hash[:blog] = "empty"
+      # hash[:blog] = "empty"
       hash[:profile_quote] = social.css(".profile-quote").text
       hash[:bio] = social.css(".details-container .description-holder p").text
 
