@@ -5,12 +5,13 @@ require 'pry'
 class Scraper
 
   def self.scrape_index_page(index_url) #is responsible for scraping the index page that lists all of the students
+    binding.pry 
     html = open(index_url)
     html = open('https://learn-co-curriculum.github.io/student-scraper-test-page/index.html#') #open-uri native method
     doc = Nokogiri::HTML(html)
     profiles = doc.css(".card-text-container").text.strip
     profiles.each {|p| puts p.text.strip}
-    binding.pry
+  
   end
 
   # .roster-cards-container
