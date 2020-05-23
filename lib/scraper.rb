@@ -24,11 +24,11 @@ class Scraper
     binding.pry
     doc.css(".vitals-container").each do |e|
       hash = {}
-      hash[:twitter] =
-      hash[:linkedin] =
-      hash[:github] =
+      hash[:twitter] = e.css(".social-icon-container")
+      hash[:linkedin] = e.css(".social-icon-container")
+      hash[:github] = e.css(".social-icon-container")
       hash[:blog] =
-      hash[:profile_quote] =
+      hash[:profile_quote] = e.css(".social-icon-container .profile-quote")
       hash[:bio] =
       array << hash
     end
