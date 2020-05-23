@@ -9,10 +9,13 @@ class Scraper
     array = []
     doc.css(".student-card").each do |e|
       hash = {}
-      hash[:name] = e.css(".card-text-container .student-name").text.strip
-      hash[:location] = e.css(".card-text-container .student-location").text.strip
+      hash[:name] = e.css(".student-name").text
+      hash[:location] = e.css(".student-location").text
+      var = e.css("a")
+      hash[:profile_url] = var['href']
       binding.pry
-      #hash[:profile_url] = e.css(".student-card a")['href']
+       
+      l = doc.css('.student-card a').map {|link| link['href']}[0]
       array << hash
     end
     array
