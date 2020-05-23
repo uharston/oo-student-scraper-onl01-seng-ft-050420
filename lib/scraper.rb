@@ -23,15 +23,15 @@ class Scraper
     array = []
     doc.css("").each do |e|
       hash = {}
-      hash[:twitter] = 
+      hash[:twitter] =
       hash[:linkedin] =
-      hash[:github] =  
-      hash[:blog] = 
-      hash[:profile_quote] =  
-      hash[:bio] = 
-      array << hash 
-    end 
-    array 
+      hash[:github] =
+      hash[:blog] =
+      hash[:profile_quote] =
+      hash[:bio] =
+      array << hash
+    end
+    array
   end
 
 end
