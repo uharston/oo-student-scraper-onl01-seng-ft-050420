@@ -22,7 +22,7 @@ class Scraper
     doc = Nokogiri::HTML(open(profile_url))
     array = []
     binding.pry
-    doc.css(".vitals-container").each do |e|
+    doc.css(".main-wrapper.profile .vitals-container").each do |e|
       hash = {}
       hash[:twitter] = e.css(".social-icon-container")
       hash[:linkedin] = e.css(".social-icon-container")
