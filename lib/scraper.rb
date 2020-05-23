@@ -11,7 +11,8 @@ class Scraper
       hash = {}
       hash[:name] = e.css(".card-text-container .student-name").text.strip
       hash[:location] = e.css(".card-text-container .student-location").text.strip
-      hash[:profile_url] = e.css(".student-card a")['href']
+      binding.pry 
+      #hash[:profile_url] = e.css(".student-card a")['href']
       array << hash
     end
     array
