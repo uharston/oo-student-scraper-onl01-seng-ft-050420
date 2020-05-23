@@ -28,7 +28,7 @@ class Scraper
       hash[:linkedin] = e.css(".social-icon-container")
       hash[:github] = e.css(".social-icon-container")
       hash[:blog] =
-      hash[:profile_quote] = e.css(".social-icon-container .profile-quote")
+      hash[:profile_quote] = e.css(".profile-quote")
       hash[:bio] =
       array << hash
     end
