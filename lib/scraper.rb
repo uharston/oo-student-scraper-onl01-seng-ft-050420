@@ -12,7 +12,7 @@ class Scraper
       hash[:name] = e.css(".student-name").text
       hash[:location] = e.css(".student-location").text
       var = e.css("a")
-      # hash[:profile_url] = var['href']
+       hash[:profile_url] = var.first['href']
       binding.pry
 
       l = doc.css('.student-card a').map {|link| link['href']}[0]
