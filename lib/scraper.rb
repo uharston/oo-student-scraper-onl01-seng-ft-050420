@@ -9,11 +9,15 @@ class Scraper
     doc = Nokogiri::HTML(open(index_url))
     profiles = doc.css(".card-text-container .student-name").text.strip
 
-    student = Student.new
+    # student = Student.new
+    name = doc.css(".card-text-container .student-name").text.strip
+    location = doc.css(".card-text-container .student-location").text.strip
+    profile_url = doc.css(".student-card a")['href']
+          binding.pry
     student.name = doc.css(".card-text-container .student-name").text.strip
     student.location = doc.css(".card-text-container .student-location").text.strip
     student.profile_url = doc.css(".student-card a")['href']
-      binding.pry
+
 
 
 
