@@ -14,7 +14,7 @@ class Scraper
       var = e.css("a")
       hash[:profile_url] = var['href']
       binding.pry
-       
+
       l = doc.css('.student-card a').map {|link| link['href']}[0]
       array << hash
     end
