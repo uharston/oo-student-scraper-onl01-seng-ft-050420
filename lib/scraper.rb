@@ -30,9 +30,11 @@ class Scraper
         hash[:linkedin] = e.attributes['href'].value
       elsif e.attributes['href'].value.include?('github')
         hash[:github] = e.attributes['href'].value
+      elsif e.attributes['href'].value.include?('.com/')
+        hash[:blog] = e.attributes['href'].value
       end
     end
-      # hash[:blog] = "empty"
+
       hash[:profile_quote] = social.css(".profile-quote").text
       hash[:bio] = social.css(".details-container .description-holder p").text
 
