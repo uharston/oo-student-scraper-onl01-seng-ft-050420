@@ -24,7 +24,7 @@ class Scraper
 
     social = doc.css(".main-wrapper.profile .vitals-container a")
 
-    social.each do |a|
+    social.each do |e|
       hash = {}
         binding.pry
       if e.first['href'].include?('twitter')
