@@ -23,7 +23,7 @@ class Scraper
     array = []
 
     social = doc.css(".main-wrapper.profile .vitals-container a")
-  
+
     social.each do |a|
       hash = {}
         binding.pry
@@ -33,7 +33,7 @@ class Scraper
         hash[:linkedin] = e.first['href']
       elsif e.first['href'].include?('github')
         hash[:github] = e.first['href']
-      end 
+      end
       hash[:blog] =
       hash[:profile_quote] = e.css(".profile-quote").text
       hash[:bio] = e.css(".details-container .description-holder p").text
