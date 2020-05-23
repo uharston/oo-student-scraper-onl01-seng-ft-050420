@@ -10,6 +10,16 @@ class Scraper
     profiles = doc.css(".card-text-container").text.strip
     binding.pry
 
+    name = doc.css("")
+    location = doc.css("")
+    profile_url = doc.css("")
+
+
+
+
+
+
+
     profiles.each {|p| puts p.text.strip}
 
   end
