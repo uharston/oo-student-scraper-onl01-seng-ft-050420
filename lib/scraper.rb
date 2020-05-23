@@ -23,7 +23,7 @@ class Scraper
     social = doc.css(".main-wrapper.profile")
     hash = {}
     social.css(".vitals-container a").each do |e|
-  
+
       if e.attributes['href'].value.include?('twitter')
         hash[:twitter] = e.attributes['href'].value
       elsif e.attributes['href'].value.include?('linkedin')
@@ -31,13 +31,13 @@ class Scraper
       elsif e.attributes['href'].value.include?('github')
         hash[:github] = e.attributes['href'].value
       end
-    end 
+    end
       hash[:blog] = "empty"
       hash[:profile_quote] = social.css(".profile-quote").text
       hash[:bio] = social.css(".details-container .description-holder p").text
 
       hash
-      binding.pry 
+      binding.pry
   end
 
 end
