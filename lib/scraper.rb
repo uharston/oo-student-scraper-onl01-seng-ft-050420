@@ -8,8 +8,8 @@ class Scraper
     # html = open('https://learn-co-curriculum.github.io/student-scraper-test-page/index.html#') #open-uri native method
     doc = Nokogiri::HTML(open(index_url))
     profiles = doc.css(".card-text-container").text.strip
-    binding.pry 
-    
+    binding.pry
+
     profiles.each {|p| puts p.text.strip}
 
   end
