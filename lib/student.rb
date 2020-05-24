@@ -5,6 +5,7 @@ class Student
   @@all = []
 
   def initialize(student_hash)
+    binding.pry
     student_hash.each_pair do |key, value|
       send("#{key}=",value)
     end
@@ -12,7 +13,7 @@ class Student
   end
 
   def self.create_from_collection(students_array)
-binding.pry 
+
   end
 
   def add_student_attributes(attributes_hash)
