@@ -12,7 +12,7 @@ class Scraper
       hash[:name] = e.css(".student-name").text
       hash[:location] = e.css(".student-location").text
       hash[:profile_url] = e.css("a").first['href']
-      # l = doc.css('.student-card a').map {|link| link['href']}[0]
+
       array << hash
     end
     array
@@ -23,7 +23,6 @@ class Scraper
     social = doc.css(".main-wrapper.profile")
     hash = {}
     social.css(".vitals-container a").each do |e|
-
       if e.attributes['href'].value.include?('twitter')
         hash[:twitter] = e.attributes['href'].value
       elsif e.attributes['href'].value.include?('linkedin')
@@ -34,12 +33,10 @@ class Scraper
         hash[:blog] = e.attributes['href'].value
       end
     end
+    hash[:profile_quote] = social.css(".profile-quote").text
+    hash[:bio] = social.css(".details-container .description-holder p").text
 
-      hash[:profile_quote] = social.css(".profile-quote").text
-      hash[:bio] = social.css(".details-container .description-holder p").text
-
-      hash
-
+    hash
   end
 
 end
