@@ -20,3 +20,13 @@ class Student
     @@all
   end
 end
+
+# @name = :name
+# @location = :location
+# @twitter = :twitter
+# @linkedin = :linkedin
+# @github = :github
+# @blog = :blog
+# @profile_quoute = :profile_quote
+# @bio = :bio
+# @profile_url = :profile_url
