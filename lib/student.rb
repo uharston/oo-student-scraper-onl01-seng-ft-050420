@@ -5,14 +5,14 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    self.send('name=', student_hash[:name])
-    self.send('location=', student_hash[:location])
-    self.send('profile_url=', student_hash[:profile_url])
-
-    # binding.pry
-    # student_hash.each_pair do |key, value|
-    #   send("#{key}=",value)
-    # end
+    # self.send('name=', student_hash[:name])
+    # self.send('location=', student_hash[:location])
+    # self.send('profile_url=', student_hash[:profile_url])
+    # 
+    # # binding.pry
+    student_hash.each_pair do |key, value|
+      send("#{key}=",value)
+    end
     @@all << self
   end
 
